@@ -68,13 +68,6 @@ public class Admin {
 
     public static void plug(Connection connection) throws Exception {
 
-     //   Channel channel = connection.createChannel();
-      //  String channelName = channel.queueDeclare(Domain.TopicNames.Info,false, false,false, null).getQueue();
-      //  channel.exchangeDeclare(Domain.Exchange.Name, BuiltinExchangeType.TOPIC);
-
-      //  channel.queueBind(channelName, Domain.Exchange.Name, channelName);
-      //  System.out.println("created queue: " + channelName);
-
         Channel channel = connection.createChannel();
         String channelName = channel.queueDeclare().getQueue();
         channel.exchangeDeclare(Domain.Exchange.Name, BuiltinExchangeType.TOPIC);
